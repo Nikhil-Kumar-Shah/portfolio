@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Home | Nikhil Kumar Shah</title>
+  <meta name="description"
+    content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nikhil Kumar Shah Portfolio" />
+  <meta property="og:description" content="Aspiring developer and IITM Data Science student." />
+  <meta property="og:image" content="https://yourdomain.com/assets/Nikhil_Kumar_Shah_Photo.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<body>
+  <div class="background-decor">
+    <div class="bg-gradient-sphere top-left"></div>
+    <div class="bg-gradient-sphere bottom-right"></div>
+    <div class="bg-grid-overlay"></div>
+  </div>
+  <!-- ✅ Popup -->
+  <div class="popup" id="welcomePopup">
+    <div class="popup-card">
+      <div class="popup-header">
+        <div class="popup-circles">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+        </div>
+        <h1>NIKHIL'S PORTFOLIO</h1>
+      </div>
+      <div class="popup-body">
+        <p>&gt; HELLO I'M</p>
+        <strong>NIKHIL KUMAR SHAH</strong>
+        <p>&gt; DATA SCIENCE STUDENT @ IITM</p>
+        <button id="exploreBtn">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Main Content -->
+  <div id="mainContent" class="main-content-wrapper">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
+      </div>
+
+      <!-- Hamburger button -->
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="navbar-menu">
+        <ul class="navbar-links">
+          <li><a href="index.html" class="active nav-link">Welcome</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="education.html" class="nav-link">Education</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-social">
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <header class="hero creative-hero">
+      <div class="hero-left">
+        <p id="type-greeting"></p>
+        <h1 id="type-heading"></h1>
+        <p id="type-tagline"></p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn">CONTACT ME</a>
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" class="icon-square"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" class="icon-square"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image-container"> <img src="assets/Nikhil_Kumar_Shah_Photo.jpg" alt="Nikhil Kumar Shah"
+            class="hero-image" />
+        </div>
+      </div>
+    </header>
+
+    <main class="home-summary">
+      <section class="summary-card about-card glass-card card-hover-effect">
+        <i class="fas fa-user icon"></i>
+        <h2>About Me</h2>
+        <p>I'm a Data Science student at IIT Madras, passionate about tech, AI, and building real-world solutions.</p>
+        <a href="about.html" class="btn-link">Read More</a>
+      </section>
+
+      <section class="summary-card education-card glass-card card-hover-effect">
+        <i class="fas fa-graduation-cap icon"></i>
+        <h2>Education</h2>
+        <p>Pursuing BS in Data Science from IIT Madras with strong academic foundations in AI and ML.</p>
+        <a href="education.html" class="btn-link">See Education</a>
+      </section>
+
+      <section class="summary-card projects-card glass-card card-hover-effect">
+        <i class="fas fa-code icon"></i>
+        <h2>Projects</h2>
+        <p>Explore my projects built using HTML, CSS, JavaScript, Python, and Machine Learning models.</p>
+        <a href="projects.html" class="btn-link">View Projects</a>
+      </section>
+
+      <section class="summary-card skills-card glass-card card-hover-effect">
+        <i class="fas fa-lightbulb icon"></i>
+        <h2>Skills</h2>
+        <p>Hands-on experience in full-stack web dev, Python scripting, SQL, and data analysis tools.</p>
+        <a href="skills.html" class="btn-link">Explore Skills</a>
+      </section>
+
+      <section class="summary-card certifications-card glass-card card-hover-effect">
+        <i class="fas fa-certificate icon"></i>
+        <h2>Certifications</h2>
+        <p>Certified in Google Data Analytics, IBM AI Engineering (Ongoing), and more to come.</p>
+        <a href="skills.html#certified" class="btn-link">See Certifications</a>
+      </section>
+
+      <section class="summary-card contact-card glass-card card-hover-effect">
+        <i class="fas fa-envelope icon"></i>
+        <h2>Let's Connect</h2>
+        <p>Have an idea or want to collaborate? Feel free to reach out — I’d love to hear from you!</p>
+        <a href="contact.html" class="btn-link">Contact Me</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <H3>© 2025 Nikhil Kumar Shah</H3>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+
+</html>

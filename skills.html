@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Skills | Nikhil Kumar Shah</title>
+  <meta name="description"
+    content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
+      </div>
+
+      <!-- Hamburger button -->
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="navbar-menu">
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li class="dropdown">
+            <a href="skills.html" class="active">Skills <span class="arrow">&#9662;</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="skills.html#top-skills">Top Skills</a></li>
+              <li><a href="skills.html#certified">Certified</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="navbar-social">
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="skills-section">
+      <div class="skills-block">
+        <h2 class="sub-heading" id="top-skills">Top Skills</h2>
+
+        <!-- 🔹 TAB HEADERS -->
+        <div class="tabs">
+          <button class="tab-btn active" onclick="openTab(event, 'web-dev')">Web Development</button>
+          <button class="tab-btn" onclick="openTab(event, 'data-science')">Data Science</button>
+          <button class="tab-btn" onclick="openTab(event, 'tools')">Tools</button>
+        </div>
+
+        <div id="web-dev" class="tab-content active-tab">
+          <div class="skill-entry html">
+            <div class="skill-icon"><img src="assets/html.png" alt="HTML5 Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">HTML</span></h3>
+              <p>Built responsive, accessible websites using semantic HTML5 to ensure clean structure and optimal SEO.
+              </p>
+            </div>
+          </div>
+          <div class="skill-entry css">
+            <div class="skill-icon"><img src="assets/css.png" alt="CSS3 Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">CSS</span></h3>
+              <p>Skilled in crafting layouts, creating smooth animations, and implementing responsive designs for all
+                devices.</p>
+            </div>
+          </div>
+          <div class="skill-entry js">
+            <div class="skill-icon"><img src="assets/js.png" alt="JavaScript Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">JavaScript</span></h3>
+              <p>Proficient in DOM manipulation, modern ES6+ JavaScript features, and asynchronous programming for
+                dynamic web apps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="data-science" class="tab-content">
+          <div class="skill-entry python">
+            <div class="skill-icon"><img src="assets/python.png" alt="Python Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Python</span></h3>
+              <p>Skilled in Python scripting, data analysis, and automating workflows for efficiency.</p>
+            </div>
+          </div>
+          <div class="skill-entry sql">
+            <div class="skill-icon"><img src="assets/sql.png" alt="SQL Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">SQL</span></h3>
+              <p>Comfortable working with MySQL, including joins, subqueries, and indexing for optimized queries.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="tools" class="tab-content">
+          <div class="skill-entry">
+            <div class="skill-icon"><img src="assets/vscode.png" alt="VS Code"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">VS Code</span></h3>
+              <p>my primary editor of choice, enhanced with powerful extensions for all web development tasks.</p>
+            </div>
+          </div>
+          <div class="skill-entry">
+            <div class="skill-icon"><img src="assets/github.png" alt="GitHub"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Git & GitHub</span></h3>
+              <p>Proficient with Git & GitHub for version control, code management, and team collaboration.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Card that triggers the modal -->
+    <section class="certified">
+      <h2 class="sub-heading" id="certified">Certified</h2>
+
+      <div class="certification-card" tabindex="0" role="button" aria-label="View Google Data Analytics Certificate"
+        onclick="openModal('cert1')" onkeypress="if(event.key==='Enter'){openModal('cert1');}">
+        <div class="cert-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" />
+        </div>
+        <div class="cert-info">
+          <h3>Google Data Analytics<br>
+            <span class="cert-subtitle">Professional Certificate</span>
+          </h3>
+          <div class="cert-meta">
+            <span class="meta-item"><i class="fas fa-calendar-alt"></i> 2025</span>
+            <span class="meta-item"><i class="fas fa-certificate"></i> Issued by Coursera</span>
+          </div>
+        </div>
+        <span class="cert-chevron"><i class="fas fa-chevron-right"></i></span>
+      </div>
+
+      <!-- ⭐ Modal -->
+      <div class="modal-overlay" id="cert1" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-content">
+          <span class="modal-close" tabindex="0" aria-label="Close" onclick="closeModal('cert1')"
+            onkeypress="if(event.key==='Enter'){closeModal('cert1');}">&times;</span>
+          <div class="modal-header">
+            <img class="modal-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+              alt="Google Logo" />
+            <h2>Google Data Analytics <span class="cert-path-badge">Professional Certificate</span></h2>
+          </div>
+          <p class="modal-desc">
+            <span class="cert-icon-desc">📊</span>
+            <strong>In-depth, 8-course certification from Google.</strong><br>
+            Skills: Data cleaning, analysis, SQL, dashboards, and visualization.
+          </p>
+          <div class="modules-list">
+            <div class="module">
+              <h4><i class="fas fa-layer-group"></i> 1. Foundations: Data, Data, Everywhere</h4>
+              <div class="module-content">
+                <a class="module-link" href="https://www.coursera.org/account/accomplishments/certificate/5EKXUURK2QUM"
+                  target="_blank" rel="noopener">
+                  <button class="module-cta">View Certificate</button>
+                </a>
+                <span class="module-status completed">Completed <i class="fas fa-check-circle"></i></span>
+              </div>
+            </div>
+            <!-- Add additional modules here as needed -->
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 
+      <div class="certification-card" tabindex="0" role="button" aria-label="View IBM AI Engineering Certificate"
+        onclick="openModal('cert2')" onkeypress="if(event.key==='Enter'){openModal('cert2');}">
+        <div class="cert-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo" />
+        </div>
+        <div class="cert-info">
+          <h3>IBM AI Engineering<br>
+            <span class="cert-subtitle">Professional Certificate</span>
+          </h3>
+          <div class="cert-meta">
+            <span class="meta-item"><i class="fas fa-calendar-alt"></i> 2024</span>
+            <span class="meta-item"><i class="fas fa-certificate"></i> Issued by Coursera</span>
+          </div>
+        </div>
+        <span class="cert-chevron"><i class="fas fa-chevron-right"></i></span>
+      </div>
+
+        Modal for Card 2
+      <div class="modal-overlay" id="cert2" tabindex="-1" aria-modal="true" role="dialog">
+        <div class="modal-content">
+          <span class="modal-close" tabindex="0" aria-label="Close" onclick="closeModal('cert2')"
+            onkeypress="if(event.key==='Enter'){closeModal('cert2');}">&times;</span>
+          <div class="modal-header">
+            <img class="modal-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+              alt="IBM Logo" />
+            <h2>IBM AI Engineering <span class="cert-path-badge">Professional Certificate</span></h2>
+          </div>
+          <p class="modal-desc">
+            <span class="cert-icon-desc">🤖</span>
+            <strong>Comprehensive ML/AI engineering program.</strong><br>
+            Skills: Deep learning, Python, cloud tools, and AI pipelines.
+          </p>
+          <div class="modules-list">
+            <div class="module">
+              <h4><i class="fas fa-brain"></i> 1. Neural Networks & Deep Learning</h4>
+              <div class="module-content">
+                <a class="module-link" href="https://www.coursera.org/account/accomplishments/certificate/EXAMPLE123"
+                  target="_blank" rel="noopener">
+                  <button class="module-cta">View Certificate</button>
+                </a>
+                <span class="module-status completed">Completed <i class="fas fa-check-circle"></i></span>
+              </div>
+            </div>
+            <div class="module">
+              <h4><i class="fas fa-database"></i> 2. Machine Learning with Python</h4>
+              <div class="module-content">
+                <span class="module-status">In Progress <i class="fas fa-hourglass-half"></i></span>
+              </div>
+            </div>
+            Add more modules as needed
+          </div>
+        </div>
+      </div>-->
+
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <H3>© 2025 Nikhil Kumar Shah</H3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ Important JS for Active Link -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

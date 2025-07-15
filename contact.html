@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Contact | Nikhil Kumar Shah</title>
+  <meta name="description"
+    content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
+    </div>
+
+    <!-- Hamburger button -->
+    <button class="navbar-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible menu -->
+    <div class="navbar-menu">
+      <ul class="navbar-links">
+        <li><a href="index.html" class="nav-link">Welcome</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="education.html" class="nav-link">Education</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="contact.html" class="active nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar-social">
+        <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-main-content">
+    <main class="contact-container">
+      <div class="get-in-touch-box">
+        <div class="get-in-touch-header">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+          <h2>Get In Touch_</h2>
+        </div>
+        <div class="contact-info">
+          <p>Feel free to reach out to me through any of the following methods:</p>
+          <div class="info-item">
+            <i class="fas fa-envelope icon-large"></i>
+            <p>
+              Email:
+              <a href="mailto:nikhil102007@gmail.com">nikhil102007@gmail.com</a>
+            </p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt icon-large"></i>
+            <p>Phone: <a href="tel:+917318513010">+91 7318513010</a></p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt icon-large"></i>
+            <p>Location: Gorakhpur, Uttar Pradesh, India</p>
+          </div>
+        </div>
+        <div class="social-links-contact-page">
+          <h3>Connect with me:</h3>
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github social-icon-large"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in social-icon-large"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="form-box">
+        <div class="form-header">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+          <h2>Contact_</h2>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/xwpbnzwd" method="POST" id="contactForm">
+          <label for="name">Nikhil@portfolio: enter_name</label>
+          <input class="name-form" type="text" id="name" name="name" placeholder="Your Name" required />
+
+          <label for="email">Nikhil@portfolio: enter_email</label>
+          <input type="email" id="email" name="email" placeholder="your_email@example.com" required />
+
+          <label for="message">Nikhil@portfolio: send_message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+          <button type="submit" class="send-btn">
+            Send <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+
+        <div class="success-msg" id="successMessage" style="display: none;">
+          ✅ Message sent successfully! I’ll get back to you soon.
+        </div>
+      </div>
+    </main>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <H3>© 2025 Nikhil Kumar Shah</H3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Projects | Nikhil Kumar Shah</title>
+  <meta name="description"
+    content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
+      </div>
+
+      <!-- Hamburger button -->
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="navbar-menu">
+        <ul class="navbar-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="education.html" class="nav-link">Education</a></li>
+          <li><a href="projects.html" class="active nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="navbar-social">
+          <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="projects-main-content">
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web-dev">Web Development</button>
+      <button class="filter-btn" data-filter="data-science">Data Science</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="sql">SQL</button>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="project-card" data-category="web-dev javascript html css" data-title="Personal Portfolio Website"
+        data-description=">>  A responsive and modern portfolio website built using HTML, CSS, and JavaScript. It showcases my projects, technical skills, and ongoing journey in programming and data science."
+        data-images='["assets/portfolio-1.png", "assets/portfolio-2.png", "assets/portfolio-3.png"]'
+        data-github="https://github.com/Nikhil-Kumar-Shah/portfolio"
+        data-live="https:Nikhil-Kumar-Shah.github.io/portfolio">
+        <img src="assets/0.png" alt="Personal Portfolio Website Thumbnail" class="project-thumbnail">
+        <div class="project-info">
+          <h3>Personal Portfolio Website</h3>
+          <p class="project-short-description">A personal website highlighting projects in programming and data-driven
+            development.</p>
+          <div class="badges">
+            <span class="badge html">HTML</span>
+            <span class="badge css">CSS</span>
+            <span class="badge js">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      <!--add project more here -->
+
+    </div>
+  </main>
+
+  <div id="newProjectModal" class="new-modal">
+    <div class="new-modal-content">
+      <span class="new-modal-close" onclick="closeNewModal()">×</span>
+      <h2 id="newModalTitle"><strong>Project Title</strong></h2>
+      <p id="newModalDesc">Project description</p>
+      <div id="newModalImages" class="new-modal-images"></div>
+      <div class="new-modal-buttons">
+        <a id="newModalGithub" href="#" target="_blank" class="modal-btn">GitHub Repo</a>
+        <a id="newModalLive" href="#" target="_blank" class="modal-btn">Live Demo</a>
+      </div>
+    </div>
+  </div>
+  <div id="newModalImages" class="new-modal-images"></div>
+  <div id="imagePopup" class="image-popup">
+    <div class="popup-content">
+      <img id="popupImg" src="" alt="Project Screenshot">
+    </div>
+  </div>
+
+
+  <div id="imageViewer" class="image-viewer" onclick="this.style.display='none'">
+    <img id="viewerImage" src="" alt="Preview" />
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <H3>© 2025 Nikhil Kumar Shah</H3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nikhilkumarshah/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
