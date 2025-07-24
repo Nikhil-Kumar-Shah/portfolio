@@ -1,5 +1,7 @@
+// Wait for the document to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Welcome Popup ---
+  // --- Welcome Popup Logic ---
+  // Get references to popup modal, main content, greeting/heading/tagline elements
   const popup = document.getElementById("welcomePopup");
   const mainContent = document.getElementById("mainContent");
   const exploreBtn = document.getElementById("exploreBtn");
@@ -7,15 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const headingElement = document.getElementById("type-heading");
   const taglineElement = document.getElementById("type-tagline");
 
+  // Show popup if not already seen in this session, else show main content and start typing effect
   if (!sessionStorage.getItem("seenPopup")) {
     if (popup) popup.style.display = "flex";
     if (mainContent) mainContent.style.display = "none";
   } else {
     if (popup) popup.style.display = "none";
     if (mainContent) mainContent.style.display = "block";
-    startTyping();
+    startTyping(); // begin the typing animation on page load
   }
 
+  // 'Explore' button closes popup, shows main content, starts typing, and sets session flag
   if (exploreBtn) {
     exploreBtn.addEventListener("click", () => {
       popup.style.display = "none";
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Array of rotating "roles" shown under the heading as dynamic tagline
   const roles = [
     ">>> #Creative Coder",
     ">>> #Python Enthusiast",
@@ -32,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ">>> #Aspiring Data Scientist",
     ">>> #Learner at IITM BS Program"
   ];
-
   let roleIndex = 0;
 
+  // Utility: type one character at a time for typing animation
   function typeText(element, text, speed = 50, callback) {
     if (!element) return;
     element.textContent = "";
@@ -48,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, speed);
   }
 
+  // Starts the greeting/heading/tagline typing sequence
   function startTyping() {
     const hour = new Date().getHours();
     let greet = "Hi there 👋";
@@ -55,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (hour >= 12 && hour < 17) greet = "Good Afternoon 🌞";
     else if (hour >= 17 && hour <= 24) greet = "Good Evening 🌆";
     else greet = "Good Evening 🌆";
-    let hi = "Hi 👋";
 
     typeText(greetingElement, greet, 60, () => {
       typeText(headingElement, " I'm Nikhil Kumar Shah", 50, () => {
@@ -64,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
+  // Rotates the tagline (the role labels) with a typing animation
   function rotateRoles() {
     if (!taglineElement) return;
     typeText(taglineElement, roles[roleIndex], 40, () => {
@@ -73,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Navbar Highlight ---
+  // --- Navbar: Highlight the current active page ---
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".navbar a").forEach(link => {
     if (link.getAttribute("href") === currentPath) {
@@ -81,7 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- Skills Tab Switching ---
+  // --- Skills Page: Tab Switching Logic ---
+  // Uses global function for tab navigation (compatible with inline HTML 'onclick')
   window.openTab = function (evt, tabName) {
     document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active-tab"));
     document.querySelectorAll(".tab-btn").forEach(button => button.classList.remove("active"));
@@ -90,7 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
     evt.currentTarget.classList.add("active");
   };
 
-  // --- Project Filtering ---
+  // --- Project Filter Buttons Logic ---
+  // Filters project cards by category (web-dev, python, etc)
   document.querySelectorAll(".filter-btn").forEach(button => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter.toLowerCase();
@@ -104,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Project Modal Handling ---
+  // --- Project Card Modal Logic ---
+  // Clicking a card opens modal with project info/screenshots
   document.querySelectorAll(".project-card").forEach(card => {
     card.addEventListener("click", () => {
       const title = card.dataset.title || "";
@@ -118,18 +126,42 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (e) {
         console.error("Image data format error:", e);
       }
-
       openNewModal(title, description, images, github, live);
     });
   });
 
+  // Close the project modal if user clicks the background (outside modal-content)
   window.addEventListener("click", e => {
     const modal = document.getElementById("newProjectModal");
     if (e.target === modal) modal.style.display = "none";
   });
+
+  // --- Hamburger Nav Toggle (for mobile) ---
+  const toggle = document.querySelector('.navbar-toggle');
+  const menu = document.querySelector('.navbar-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  }
+
+  // --- Tab Buttons (Skills page) Inline Handler ---
+  // Allows tab switch with click (when using only-class based tabs)
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", function (evt) {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active-tab"));
+      this.classList.add("active");
+      // Map button text to tab content id (trim, lowercase, replace spaces)
+      document.getElementById(this.textContent.trim().toLowerCase().replace(/ /g, '-')).classList.add("active-tab");
+    });
+  });
 });
 
-// --- Modal Open/Close Functions ---
+
+// ===================== MODAL FUNCTIONS =====================
+
+// Opens project detail modal with title, description, images, and links
 function openNewModal(title, description, imageArray, github, live) {
   const modal = document.getElementById("newProjectModal");
   const titleEl = document.getElementById("newModalTitle");
@@ -144,75 +176,7 @@ function openNewModal(title, description, imageArray, github, live) {
   descEl.textContent = description;
   imagesEl.innerHTML = "";
 
-  imageArray.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `${title} screenshot`;
-    img.className = "modal-img";
-    imagesEl.appendChild(img);
-  });
-
-  githubBtn.href = github;
-  liveBtn.href = live;
-  modal.style.display = "flex";
-}
-// Open modal by id
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.add('active');
-    // Optional: trap focus inside modal for accessibility
-    modal.querySelector('.modal-content').focus();
-    document.body.style.overflow = "hidden"; // Prevent background scroll
-  }
-}
-
-// Close modal by id
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = ""; // Restore scrolling
-  }
-}
-
-// Handle click outside modal-content
-document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
-  overlay.addEventListener('click', function (e) {
-    // Only close if click is on the overlay, not modal-content or children
-    if (e.target === overlay) {
-      overlay.classList.remove('active');
-      document.body.style.overflow = "";
-    }
-  });
-});
-
-// Close modal on ESC key
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' || e.key === 'Esc') {
-    document.querySelectorAll('.modal-overlay.active').forEach(function (modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = "";
-    });
-  }
-});
-
-function closeNewModal() {
-  const modal = document.getElementById("newProjectModal");
-  if (modal) modal.style.display = "none";
-}
-function openNewModal(title, description, imageArray, github, live) {
-  const modal = document.getElementById("newProjectModal");
-  const titleEl = document.getElementById("newModalTitle");
-  const descEl = document.getElementById("newModalDesc");
-  const imagesEl = document.getElementById("newModalImages");
-  const githubBtn = document.getElementById("newModalGithub");
-  const liveBtn = document.getElementById("newModalLive");
-
-  titleEl.textContent = title;
-  descEl.textContent = description;
-  imagesEl.innerHTML = "";
-
+  // Add images with click-to-enlarge handler
   imageArray.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
@@ -224,58 +188,85 @@ function openNewModal(title, description, imageArray, github, live) {
 
   githubBtn.href = github;
   liveBtn.href = live;
-
   modal.style.display = "flex";
 }
-function openImagePopup(src) {
-  const popup = document.getElementById("imagePopup");
-  const img = document.getElementById("popupImage");
-  img.src = src;
-  popup.style.display = "flex";
+
+// Closes the "new project" modal
+function closeNewModal() {
+  const modal = document.getElementById("newProjectModal");
+  if (modal) modal.style.display = "none";
 }
 
-function closeImagePopup() {
-  document.getElementById("imagePopup").style.display = "none";
+// ========== General Modal Open/Close for Certifications, etc ==========
+// Opens modal by id and traps focus for accessibility
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('active');
+    // Trap focus on modal for accessibility
+    modal.querySelector('.modal-content').focus();
+    document.body.style.overflow = "hidden";
+  }
 }
-function closeImagePopup(event) {
-  if (event) event.preventDefault(); // prevent anchor-style behavior
-  document.getElementById("imagePopup").style.display = "none";
-}
-// Open image popup
-function openImagePopup(src) {
-  const popup = document.getElementById("imagePopup");
-  const img = document.getElementById("popupImg");
-  img.src = src;
-  popup.style.display = "flex";
-}
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.navbar-toggle');
-  const menu = document.querySelector('.navbar-menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+// Closes modal by id and restores scroll
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = "";
+  }
+}
+
+// Close modal when clicking outside the modal-content area
+document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) { // only close when clicking the overlay
+      overlay.classList.remove('active');
+      document.body.style.overflow = "";
+    }
   });
 });
 
-// Close image popup when clicking outside image
-document.getElementById("imagePopup").addEventListener("click", function (e) {
-  const img = document.getElementById("popupImg");
-  if (!img.contains(e.target)) {
-    this.style.display = "none";
+// Closes any open modal on ESC key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    document.querySelectorAll('.modal-overlay.active').forEach(function (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = "";
+    });
   }
 });
-new Typed('.typed-text', {
-  strings: ["AI Researcher", "ML Developer", "Data Explorer", "Creative Coder"],
-  typeSpeed: 50,
-  backSpeed: 25,
-  loop: true
+
+// ===================== IMAGE VIEWER/POPUP FUNCTIONS =====================
+
+// Opens popup overlay for large image view
+function openImagePopup(src) {
+  const popup = document.getElementById("imagePopup");
+  // Support for both 'popupImg' and 'popupImage' ids for backward-compatibility
+  const img = document.getElementById("popupImg") || document.getElementById("popupImage");
+  if (img) img.src = src;
+  if (popup) popup.style.display = "flex";
+}
+
+// Close popup viewer from anywhere outside the image or on event
+function closeImagePopup(event) {
+  if (event) event.preventDefault();
+  document.getElementById("imagePopup").style.display = "none";
+}
+
+// Clicking the popup outside the image also closes it
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("imagePopup");
+  if (popup) {
+    popup.addEventListener("click", function (e) {
+      const img = document.getElementById("popupImg") || document.getElementById("popupImage");
+      if (!img.contains(e.target)) {
+        popup.style.display = "none";
+      }
+    });
+  }
 });
-document.querySelectorAll(".tab-btn").forEach(btn => {
-  btn.addEventListener("click", function (evt) {
-    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active-tab"));
-    this.classList.add("active");
-    document.getElementById(this.textContent.trim().toLowerCase().replace(/ /g, '-')).classList.add("active-tab");
-  });
-});
+
+
 

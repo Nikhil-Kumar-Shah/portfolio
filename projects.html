@@ -2,16 +2,26 @@
 <html lang="en">
 
 <head>
+  <!-- Set character encoding and ensure proper scaling on all devices -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon for browser tab -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Page meta info for SEO and accessibility -->
   <title>Projects | Nikhil Kumar Shah</title>
   <meta name="description"
     content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+
+  <!-- Core stylesheet and icon library -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Preconnect for better web font performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import Google Fonts for display text -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
     rel="stylesheet">
@@ -19,17 +29,18 @@
 
 <body>
   <header>
+    <!-- Navigation bar with branding and menu toggle for mobile -->
     <nav class="navbar">
       <div class="navbar-brand">
         <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
       </div>
 
-      <!-- Hamburger button -->
+      <!-- Mobile hamburger menu button -->
       <button class="navbar-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- Collapsible menu -->
+      <!-- Collapsible navigation menu -->
       <div class="navbar-menu">
         <ul class="navbar-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -39,6 +50,7 @@
           <li><a href="skills.html" class="nav-link">Skills</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <!-- Social icons with accessibility labels -->
         <div class="navbar-social">
           <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
@@ -52,6 +64,7 @@
   </header>
 
   <main class="projects-main-content">
+    <!-- Project filter buttons for interactive category selection -->
     <div class="project-filters">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="web-dev">Web Development</button>
@@ -60,18 +73,23 @@
       <button class="filter-btn" data-filter="sql">SQL</button>
     </div>
 
+    <!-- Grid displaying individual project cards -->
     <div class="project-grid">
 
+      <!-- Project 1: Personal Portfolio Website -->
       <div class="project-card" data-category="web-dev javascript html css" data-title="Personal Portfolio Website"
         data-description=">>  A responsive and modern portfolio website built using HTML, CSS, and JavaScript. It showcases my projects, technical skills, and ongoing journey in programming and data science."
         data-images='["assets/portfolio-1.png", "assets/portfolio-2.png", "assets/portfolio-3.png"]'
         data-github="https://github.com/Nikhil-Kumar-Shah/portfolio"
         data-live="https://nikhil-kumar-shah.github.io/portfolio/">
+        <!-- Project thumbnail image -->
         <img src="assets/0.png" alt="Personal Portfolio Website Thumbnail" class="project-thumbnail">
         <div class="project-info">
           <h3>Personal Portfolio Website</h3>
-          <p class="project-short-description">A personal website highlighting projects in programming and data-driven
-            development.</p>
+          <p class="project-short-description">
+            A personal website highlighting projects in programming and data-driven development.
+          </p>
+          <!-- Technology badges for quick reference -->
           <div class="badges">
             <span class="badge html">HTML</span>
             <span class="badge css">CSS</span>
@@ -80,15 +98,19 @@
         </div>
       </div>
 
+      <!-- Project 2: Dice Game-Python CLI -->
       <div class="project-card" data-category="python" data-title="Dice Game-Python CLI"
         data-description=">>  A simple Python-based command-line dice game that simulates the roll of two dice using the random module. This project helped strengthen my understanding of Python fundamentals, control flow, and CLI interactions."
-        data-images='["assets/roll_dice-1.png"]' 
-        data-github="https://github.com/Nikhil-Kumar-Shah/Dice_Game-Python_CLI"
+        data-images='["assets/roll_dice-1.png"]' data-github="https://github.com/Nikhil-Kumar-Shah/Dice_Game-Python_CLI"
         data-live="https://github.com/Nikhil-Kumar-Shah/Dice_Game-Python_CLI/blob/main/DiceGame_Python%20CLI.py">
+        <!-- Project thumbnail image -->
         <img src="assets/Dice_Game-Python_CLI.jpg" alt="Dice Game-Python CLI Thumbnail" class="project-thumbnail">
         <div class="project-info">
           <h3>Dice Game-Python CLI</h3>
-          <p class="project-short-description">A simple command-line dice game that simulates rolling dice's.</p>
+          <p class="project-short-description">
+            A simple command-line dice game that simulates rolling dice's.
+          </p>
+          <!-- Technology badges for quick reference -->
           <div class="badges">
             <span class="badge python">Python</span>
           </div>
@@ -97,7 +119,7 @@
     </div>
   </main>
 
-  <!-- Modal (corrected ID and removed extra images div) -->
+  <!-- Modal for displaying project details in depth -->
   <div id="newProjectModal" class="new-modal">
     <div class="new-modal-content">
       <span class="new-modal-close" onclick="closeNewModal()">×</span>
@@ -111,15 +133,14 @@
     </div>
   </div>
 
-  <!-- Only ONE newModalImages with this ID allowed! -->
-  <!-- Image Popup -->
+  <!-- Single image popup for enlarged project screenshots -->
   <div id="imagePopup" class="image-popup">
     <div class="popup-content">
       <img id="popupImg" src="" alt="Project Screenshot">
     </div>
   </div>
 
-  <!-- Image Viewer (space fixed) -->
+  <!-- Simple viewer for larger project previews -->
   <div id="imageViewer" class="image-viewer" onclick="this.style.display='none'">
     <img id="viewerImage" src="" alt="Preview" />
   </div>
@@ -139,6 +160,7 @@
       </div>
     </div>
   </footer>
+  <!-- Main JS file for all interactive project features and modals -->
   <script src="script.js"></script>
 </body>
 

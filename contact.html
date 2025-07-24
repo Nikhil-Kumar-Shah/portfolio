@@ -2,34 +2,43 @@
 <html lang="en">
 
 <head>
+  <!-- Character encoding and responsive design -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon for tab icon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Page title and meta description for SEO -->
   <title>Contact | Nikhil Kumar Shah</title>
   <meta name="description"
     content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+
+  <!-- CSS and icon libraries -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts for improved typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+  <!-- ===================== Navbar / Site Navigation ===================== -->
   <nav class="navbar">
     <div class="navbar-brand">
       <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
     </div>
 
-    <!-- Hamburger button -->
+    <!-- Hamburger button for mobile responsiveness -->
     <button class="navbar-toggle" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Collapsible menu -->
+    <!-- Main navigation links, active state set for Contact page -->
     <div class="navbar-menu">
       <ul class="navbar-links">
         <li><a href="index.html" class="nav-link">Welcome</a></li>
@@ -39,6 +48,7 @@
         <li><a href="skills.html" class="nav-link">Skills</a></li>
         <li><a href="contact.html" class="active nav-link">Contact</a></li>
       </ul>
+      <!-- Social icons with ARIA labels for accessibility -->
       <div class="navbar-social">
         <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
@@ -50,10 +60,14 @@
     </div>
   </nav>
 
+  <!-- ===================== Main Contact Content ===================== -->
+  <!-- Main page content split into contact info and contact form -->
   <main class="contact-main-content">
     <main class="contact-container">
+      <!-- ---- GET IN TOUCH SECTION ---- -->
       <div class="get-in-touch-box">
         <div class="get-in-touch-header">
+          <!-- Colored circles for decorative "window" effect -->
           <span class="circle red"></span>
           <span class="circle yellow"></span>
           <span class="circle green"></span>
@@ -77,6 +91,7 @@
             <p>Location: Gorakhpur, Uttar Pradesh, India</p>
           </div>
         </div>
+        <!-- Social icons for instant connection -->
         <div class="social-links-contact-page">
           <h3>Connect with me:</h3>
           <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
@@ -88,13 +103,16 @@
         </div>
       </div>
 
+      <!-- ---- CONTACT FORM SECTION ---- -->
       <div class="form-box">
         <div class="form-header">
+          <!-- Decorative window circles for card header -->
           <span class="circle red"></span>
           <span class="circle yellow"></span>
           <span class="circle green"></span>
           <h2>Contact_</h2>
         </div>
+        <!-- Contact form (sends data to Formspree backend) -->
         <form class="contact-form" action="https://formspree.io/f/xwpbnzwd" method="POST" id="contactForm">
           <label for="name">Nikhil@portfolio: enter_name</label>
           <input class="name-form" type="text" id="name" name="name" placeholder="Your Name" required />
@@ -109,7 +127,7 @@
             Send <i class="fas fa-paper-plane"></i>
           </button>
         </form>
-
+        <!-- Success message shown after successful form submission, hidden by default -->
         <div class="success-msg" id="successMessage" style="display: none;">
           ✅ Message sent successfully! I’ll get back to you soon.
         </div>
@@ -117,6 +135,7 @@
     </main>
   </main>
 
+  <!-- ===================== Footer ===================== -->
   <footer class="site-footer">
     <div class="footer-content">
       <H3>© 2025 Nikhil Kumar Shah</H3>
@@ -137,6 +156,8 @@
     </div>
   </footer>
 
+  <!-- ===================== Scripts ===================== -->
+  <!-- Main JavaScript file for navbar, form, and page interactivity -->
   <script src="script.js"></script>
 </body>
 

@@ -2,30 +2,37 @@
 <html lang="en">
 
 <head>
+  <!-- Set character encoding for proper text rendering and responsiveness on all devices -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon for browser tab -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Page title and SEO description -->
   <title>Skills | Nikhil Kumar Shah</title>
   <meta name="description"
     content="Portfolio of Nikhil Kumar Shah, a Data Science student at IIT Madras. Showcasing skills, projects, and certifications.">
+
+  <!-- Stylesheets and icon libraries -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
   <header>
+    <!-- Navigation bar with site branding and social icons -->
     <nav class="navbar">
       <div class="navbar-brand">
         <h1><a href="index.html">NIKHIL'S PORTFOLIO</a></h1>
       </div>
 
-      <!-- Hamburger button -->
+      <!-- Hamburger menu for mobile navigation -->
       <button class="navbar-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- Collapsible menu -->
+      <!-- Collapsible navigation menu with dropdown for skills -->
       <div class="navbar-menu">
         <ul class="navbar-links">
           <li><a href="index.html">Home</a></li>
@@ -41,7 +48,7 @@
           </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-
+        <!-- Social media links -->
         <div class="navbar-social">
           <a href="https://github.com/Nikhil-Kumar-Shah" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
@@ -55,17 +62,19 @@
   </header>
 
   <main>
+    <!-- Top Skills Section with tabbed navigation -->
     <section class="skills-section">
       <div class="skills-block">
         <h2 class="sub-heading" id="top-skills">Top Skills</h2>
 
-        <!-- 🔹 TAB HEADERS -->
+        <!-- Tab headers to switch between skill categories -->
         <div class="tabs">
           <button class="tab-btn active" onclick="openTab(event, 'web-dev')">Web Development</button>
           <button class="tab-btn" onclick="openTab(event, 'data-science')">Data Science</button>
           <button class="tab-btn" onclick="openTab(event, 'tools')">Tools</button>
         </div>
 
+        <!-- Web Development Skills Tab -->
         <div id="web-dev" class="tab-content active-tab">
           <div class="skill-entry html">
             <div class="skill-icon"><img src="assets/html.png" alt="HTML5 Logo"></div>
@@ -93,6 +102,7 @@
           </div>
         </div>
 
+        <!-- Data Science Skills Tab -->
         <div id="data-science" class="tab-content">
           <div class="skill-entry python">
             <div class="skill-icon"><img src="assets/python.png" alt="Python Logo"></div>
@@ -110,12 +120,13 @@
           </div>
         </div>
 
+        <!-- Tools Tab -->
         <div id="tools" class="tab-content">
           <div class="skill-entry">
             <div class="skill-icon"><img src="assets/vscode.png" alt="VS Code"></div>
             <div class="skill-details">
               <h3><span class="skill-name-badge">VS Code</span></h3>
-              <p>my primary editor of choice, enhanced with powerful extensions for all web development tasks.</p>
+              <p>My primary editor of choice, enhanced with powerful extensions for all web development tasks.</p>
             </div>
           </div>
           <div class="skill-entry">
@@ -126,11 +137,14 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
-    <!-- Card that triggers the modal -->
+
+    <!-- Certification Section with accessible card and modal for certificate details -->
     <section class="certified">
       <h2 class="sub-heading" id="certified">Certified</h2>
 
+      <!-- Google Data Analytics Certificate Card -->
       <div class="certification-card" tabindex="0" role="button" aria-label="View Google Data Analytics Certificate"
         onclick="openModal('cert1')" onkeypress="if(event.key==='Enter'){openModal('cert1');}">
         <div class="cert-icon">
@@ -148,7 +162,7 @@
         <span class="cert-chevron"><i class="fas fa-chevron-right"></i></span>
       </div>
 
-      <!-- ⭐ Modal -->
+      <!-- Modal popup for certification details -->
       <div class="modal-overlay" id="cert1" tabindex="-1" aria-modal="true" role="dialog">
         <div class="modal-content">
           <span class="modal-close" tabindex="0" aria-label="Close" onclick="closeModal('cert1')"
@@ -174,72 +188,17 @@
                 <span class="module-status completed">Completed <i class="fas fa-check-circle"></i></span>
               </div>
             </div>
-            <!-- Add additional modules here as needed -->
+            <!-- Additional modules can be added here in the same structure -->
           </div>
         </div>
       </div>
-      <!-- Card 2 
-      <div class="certification-card" tabindex="0" role="button" aria-label="View IBM AI Engineering Certificate"
-        onclick="openModal('cert2')" onkeypress="if(event.key==='Enter'){openModal('cert2');}">
-        <div class="cert-icon">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo" />
-        </div>
-        <div class="cert-info">
-          <h3>IBM AI Engineering<br>
-            <span class="cert-subtitle">Professional Certificate</span>
-          </h3>
-          <div class="cert-meta">
-            <span class="meta-item"><i class="fas fa-calendar-alt"></i> 2024</span>
-            <span class="meta-item"><i class="fas fa-certificate"></i> Issued by Coursera</span>
-          </div>
-        </div>
-        <span class="cert-chevron"><i class="fas fa-chevron-right"></i></span>
-      </div>
-
-        Modal for Card 2
-      <div class="modal-overlay" id="cert2" tabindex="-1" aria-modal="true" role="dialog">
-        <div class="modal-content">
-          <span class="modal-close" tabindex="0" aria-label="Close" onclick="closeModal('cert2')"
-            onkeypress="if(event.key==='Enter'){closeModal('cert2');}">&times;</span>
-          <div class="modal-header">
-            <img class="modal-cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
-              alt="IBM Logo" />
-            <h2>IBM AI Engineering <span class="cert-path-badge">Professional Certificate</span></h2>
-          </div>
-          <p class="modal-desc">
-            <span class="cert-icon-desc">🤖</span>
-            <strong>Comprehensive ML/AI engineering program.</strong><br>
-            Skills: Deep learning, Python, cloud tools, and AI pipelines.
-          </p>
-          <div class="modules-list">
-            <div class="module">
-              <h4><i class="fas fa-brain"></i> 1. Neural Networks & Deep Learning</h4>
-              <div class="module-content">
-                <a class="module-link" href="https://www.coursera.org/account/accomplishments/certificate/EXAMPLE123"
-                  target="_blank" rel="noopener">
-                  <button class="module-cta">View Certificate</button>
-                </a>
-                <span class="module-status completed">Completed <i class="fas fa-check-circle"></i></span>
-              </div>
-            </div>
-            <div class="module">
-              <h4><i class="fas fa-database"></i> 2. Machine Learning with Python</h4>
-              <div class="module-content">
-                <span class="module-status">In Progress <i class="fas fa-hourglass-half"></i></span>
-              </div>
-            </div>
-            Add more modules as needed
-          </div>
-        </div>
-      </div>-->
-
-
+      <!-- IBM Certificate example is commented out for later use if needed -->
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <H3>© 2025 Nikhil Kumar Shah</H3>
+      <h3>© 2025 Nikhil Kumar Shah</h3>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -257,8 +216,7 @@
     </div>
   </footer>
 
-  <!-- ✅ Important JS for Active Link -->
-
+  <!-- Main JavaScript file for tab and modal operations -->
   <script src="script.js"></script>
 </body>
 
