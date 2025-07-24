@@ -1505,12 +1505,14 @@ a {
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, 350px);
   gap: 30px;
+  justify-content: center;
   padding: 40px 20px;
   max-width: 1280px;
   margin: 0 auto;
 }
+
 
 .project-card {
   background: rgba(17, 24, 39, 0.78);

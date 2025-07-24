@@ -278,3 +278,4 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
     document.getElementById(this.textContent.trim().toLowerCase().replace(/ /g, '-')).classList.add("active-tab");
   });
 });
+

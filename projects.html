@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
     rel="stylesheet">
@@ -80,11 +79,25 @@
           </div>
         </div>
       </div>
-      <!--add project more here -->
 
+      <div class="project-card" data-category="python" data-title="Dice Game-Python CLI"
+        data-description=">>  A simple Python-based command-line dice game that simulates the roll of two dice using the random module. This project helped strengthen my understanding of Python fundamentals, control flow, and CLI interactions."
+        data-images='["assets/roll_dice-1.png"]' 
+        data-github="https://github.com/Nikhil-Kumar-Shah/Dice_Game-Python_CLI"
+        data-live="https://github.com/Nikhil-Kumar-Shah/Dice_Game-Python_CLI/blob/main/DiceGame_Python%20CLI.py">
+        <img src="assets/Dice_Game-Python_CLI.jpeg" alt="Dice Game-Python CLI Thumbnail" class="project-thumbnail">
+        <div class="project-info">
+          <h3>Dice Game-Python CLI</h3>
+          <p class="project-short-description">A simple command-line dice game that simulates rolling dice's.</p>
+          <div class="badges">
+            <span class="badge python">Python</span>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
+  <!-- Modal (corrected ID and removed extra images div) -->
   <div id="newProjectModal" class="new-modal">
     <div class="new-modal-content">
       <span class="new-modal-close" onclick="closeNewModal()">×</span>
@@ -97,21 +110,23 @@
       </div>
     </div>
   </div>
-  <div id="newModalImages" class="new-modal-images"></div>
+
+  <!-- Only ONE newModalImages with this ID allowed! -->
+  <!-- Image Popup -->
   <div id="imagePopup" class="image-popup">
     <div class="popup-content">
       <img id="popupImg" src="" alt="Project Screenshot">
     </div>
   </div>
 
-
+  <!-- Image Viewer (space fixed) -->
   <div id="imageViewer" class="image-viewer" onclick="this.style.display='none'">
     <img id="viewerImage" src="" alt="Preview" />
   </div>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <H3>© 2025 Nikhil Kumar Shah</H3>
+      <h3>© 2025 Nikhil Kumar Shah</h3>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -124,9 +139,7 @@
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
-
 </body>
 
 </html>
