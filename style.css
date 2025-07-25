@@ -2516,6 +2516,42 @@ a {
     transform: scale(1);
   }
 }
+.modal-content {
+  max-width: 90%;
+  width: 50%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-header, .modal-close, .modal-desc {
+  flex-shrink: 0;
+}
+
+.modules-list {
+  overflow-y: auto;
+  flex-grow: 1;
+  min-height: 0;    
+  padding-bottom: 20px; 
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    max-height: 98vh;
+    width: 99vw;
+  }
+}
+.module-status.ongoing {
+  color: #f39c12; 
+  font-weight: bold;
+}
+.module-cta[disabled] {
+  cursor: not-allowed;
+  background: #6b7280;
+  color: #f3f4f6; 
+  width: 170px;
+}
 
 /* === Scrollbar Styling === */
 .modal-content::-webkit-scrollbar,
