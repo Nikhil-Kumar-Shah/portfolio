@@ -66,16 +66,61 @@
     <section class="skills-section">
       <div class="skills-block">
         <h2 class="sub-heading" id="top-skills">Top Skills</h2>
-
-        <!-- Tab headers to switch between skill categories -->
         <div class="tabs">
-          <button class="tab-btn active" onclick="openTab(event, 'web-development')">Web Development</button>
-          <button class="tab-btn" onclick="openTab(event, 'data-science')">Data Science</button>
+          <button class="tab-btn active" onclick="openTab(event, 'data-science')">Data Science</button>
+          <button class="tab-btn" onclick="openTab(event, 'web-development')">Web Development</button>
           <button class="tab-btn" onclick="openTab(event, 'tools')">Tools</button>
         </div>
-
-        <!-- Web Development Skills Tab -->
-        <div id="web-development" class="tab-content active-tab">
+        <!-- Data Science Tab -->
+        <div id="data-science" class="tab-content active-tab">
+          <div class="skill-entry python">
+            <div class="skill-icon"><img src="assets/python.png" alt="Python Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Python</span></h3>
+              <p>Skilled in Python scripting, data analysis, and automating workflows for efficiency.</p>
+            </div>
+          </div>
+          <div class="skill-entry sql">
+            <div class="skill-icon"><img src="assets/sql.png" alt="SQL Logo"></div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">SQL</span></h3>
+              <p>Comfortable working with MySQL, including joins, subqueries, and indexing for optimized queries.</p>
+            </div>
+          </div>
+          <div class="skill-entry powerbi">
+            <div class="skill-icon">
+              <img src="assets/power_bi.png" alt="Power BI Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Power BI</span></h3>
+              <p>Experienced in building interactive dashboards, data models, and visualizations using Power BI for
+                actionable business insights.</p>
+            </div>
+          </div>
+          <div class="skill-entry googlesheets">
+            <div class="skill-icon">
+              <img src="assets/sheets.png"
+                alt="Google Sheets Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Google Sheets</span></h3>
+              <p>Proficient in using Google Sheets for collaborative data analysis, advanced formulas, automation, and
+                interactive dashboards.</p>
+            </div>
+          </div>
+          <div class="skill-entry excel">
+            <div class="skill-icon">
+              <img src="assets/excel.png"
+                alt="Excel Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Microsoft Excel</span></h3>
+              <p>Advanced skills in Excel for data analysis, pivot tables, formulas, and business reporting.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Web Development Tab -->
+        <div id="web-development" class="tab-content">
           <div class="skill-entry html">
             <div class="skill-icon"><img src="assets/html.png" alt="HTML5 Logo"></div>
             <div class="skill-details">
@@ -101,25 +146,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Data Science Skills Tab -->
-        <div id="data-science" class="tab-content">
-          <div class="skill-entry python">
-            <div class="skill-icon"><img src="assets/python.png" alt="Python Logo"></div>
-            <div class="skill-details">
-              <h3><span class="skill-name-badge">Python</span></h3>
-              <p>Skilled in Python scripting, data analysis, and automating workflows for efficiency.</p>
-            </div>
-          </div>
-          <div class="skill-entry sql">
-            <div class="skill-icon"><img src="assets/sql.png" alt="SQL Logo"></div>
-            <div class="skill-details">
-              <h3><span class="skill-name-badge">SQL</span></h3>
-              <p>Comfortable working with MySQL, including joins, subqueries, and indexing for optimized queries.</p>
-            </div>
-          </div>
-        </div>
-
         <!-- Tools Tab -->
         <div id="tools" class="tab-content">
           <div class="skill-entry">
@@ -129,6 +155,16 @@
               <p>My primary editor of choice, enhanced with powerful extensions for all web development tasks.</p>
             </div>
           </div>
+          <div class="skill-entry pycharm">
+            <div class="skill-icon">
+              <img src="assets/pycharm.png" alt="PyCharm Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">PyCharm</span></h3>
+              <p>Experienced in using PyCharm IDE for Python development, debugging, and project management with
+                advanced features and plugins.</p>
+            </div>
+          </div>
           <div class="skill-entry">
             <div class="skill-icon"><img src="assets/github.png" alt="GitHub"></div>
             <div class="skill-details">
@@ -136,9 +172,44 @@
               <p>Proficient with Git & GitHub for version control, code management, and team collaboration.</p>
             </div>
           </div>
+          <div class="skill-entry colab">
+            <div class="skill-icon">
+              <img src="assets/colab.png"
+                alt="Google Colab Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Google Colab</span></h3>
+              <p>Skilled in using Google Colab for cloud-based Python coding, machine learning experiments, and
+                collaborative notebooks.</p>
+            </div>
+          </div>
+          <div class="skill-entry googledocs">
+            <div class="skill-icon">
+              <img src="assets/docs.png"
+                alt="Google Docs Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Google Docs</span></h3>
+              <p>Experienced in creating, formatting, and collaborating on documents using Google Docs for efficient
+                teamwork and productivity.</p>
+            </div>
+          </div>
+          <div class="skill-entry word">
+            <div class="skill-icon">
+              <img src="assets/word.png"
+                alt="Word Logo">
+            </div>
+            <div class="skill-details">
+              <h3><span class="skill-name-badge">Microsoft Word</span></h3>
+              <p>Proficient in document creation, advanced formatting, mail merge, and template design using Microsoft
+                Word.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
 
     <!-- Certification Section with accessible card and modal for certificate details -->
     <section class="certified">

@@ -145,16 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Tab Buttons (Skills page) Inline Handler ---
-  // Allows tab switch with click (when using only-class based tabs)
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", function (evt) {
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active-tab"));
-      this.classList.add("active");
-      // Map button text to tab content id (trim, lowercase, replace spaces)
-      document.getElementById(this.textContent.trim().toLowerCase().replace(/ /g, '-')).classList.add("active-tab");
-    });
+  // Wait for the document to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    // --- Skills Page: Tab Switching Logic ---
+    // Uses global function for tab navigation (compatible with inline HTML 'onclick')
+    window.openTab = function (evt, tabName) {
+      document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active-tab"));
+      document.querySelectorAll(".tab-btn").forEach(button => button.classList.remove("active"));
+      const selectedTab = document.getElementById(tabName);
+      if (selectedTab) selectedTab.classList.add("active-tab");
+      evt.currentTarget.classList.add("active");
+    };
   });
 });
 

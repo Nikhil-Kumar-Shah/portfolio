@@ -594,6 +594,41 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+
+  /* Tablet specific adjustments */
+  .hero,
+  .creative-hero {
+    padding: 40px 2vw;
+    gap: 24px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-left p {
+    font-size: 1.15rem;
+  }
+
+  .hero-image-container {
+    width: 180px;
+    height: 180px;
+    margin-top: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
 
   /* Adjust Hero for mobile */
@@ -1892,6 +1927,32 @@ a {
   background: #f44336;
 }
 
+/* --- New Badge Styles --- */
+.badge.pandas {
+  background: #150458;
+  color: #fff;
+}
+
+.badge.matplotlib {
+  background: #11557c;
+  color: #fff;
+}
+
+.badge.colab {
+  background: #f37726;
+  color: #fff;
+}
+
+.badge.powerbi {
+  background: #f9c300;
+  color: #222;
+}
+
+.badge.dashboard {
+  background: #009688;
+  color: #fff;
+}
+
 /* === Modal (Pop-Up for Project Details) === */
 .new-modal {
   display: none;
@@ -3143,14 +3204,12 @@ a {
 /* === 10. CONTACT === */
 .contact-main-content {
   padding: 20px 20px 80px;
-  /* Adjusted top padding */
+  height: 90vh;
+  max-height: 100%;
   max-width: 1280px;
   margin: 0 auto;
   color: var(--text-primary);
 }
-
-/* Removed page-title from here as it's replaced by .main-heading with typewriter effect */
-/* .page-title rules are now covered by .main-heading with specific responsive adjustments */
 
 .contact-container {
   display: flex;
@@ -3161,6 +3220,7 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
+
 }
 
 .get-in-touch-box,
@@ -3530,7 +3590,9 @@ a {
   .get-in-touch-box,
   .form-box {
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 10px;
+    min-width: unset;
+    width: 100%;
   }
 
   .get-in-touch-header h2,
@@ -3899,4 +3961,734 @@ video {
     font-size: 1.5rem;
     margin-bottom: 18px;
   }
+}
+
+/* === Custom Interactive Buttons === */
+.btn,
+.btn-link,
+button,
+input[type="submit"],
+.send-btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary);
+  background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 12px 34px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.18);
+  transition: all 0.4s cubic-bezier(.4, 0, .2, 1);
+  z-index: 1;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.btn::before,
+.btn::after,
+.btn-link::before,
+.btn-link::after,
+button::before,
+button::after,
+input[type="submit"]::before,
+input[type="submit"]::after,
+.send-btn::before,
+.send-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.btn::before,
+.btn-link::before,
+button::before,
+input[type="submit"]::before,
+.send-btn::before {
+  left: -10px;
+  background: var(--primary);
+}
+
+.btn::after,
+.btn-link::after,
+button::after,
+input[type="submit"]::after,
+.send-btn::after {
+  right: -10px;
+  background: var(--accent);
+}
+
+.btn:hover::before,
+.btn:hover::after,
+.btn-link:hover::before,
+.btn-link:hover::after,
+button:hover::before,
+button:hover::after,
+input[type="submit"]:hover::before,
+input[type="submit"]:hover::after,
+.send-btn:hover::before,
+.send-btn:hover::after {
+  width: 58%;
+}
+
+.btn span,
+.btn-link span,
+button span,
+input[type="submit"] span,
+.send-btn span {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.08rem;
+  transition: color 0.3s;
+}
+
+.btn:hover span,
+.btn-link:hover span,
+button:hover span,
+input[type="submit"]:hover span,
+.send-btn:hover span {
+  color: #e0aaff;
+  transition: color 0.3s;
+}
+
+.btn:active,
+.btn-link:active,
+button:active,
+input[type="submit"]:active,
+.send-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px var(--accent);
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 600px) {
+
+  .btn,
+  .btn-link,
+  button,
+  input[type="submit"],
+  .send-btn {
+    font-size: 0.98rem;
+    padding: 10px 18px;
+    min-width: 120px;
+    max-width: 100%;
+    font-size: 1.05rem;
+    padding: 14px 0;
+    margin: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 12px;
+  }
+}
+
+/* --- BUTTONS: Restrict interactive effect to .fancy-btn only --- */
+.fancy-btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary);
+  background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 12px 34px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.18);
+  transition: all 0.4s cubic-bezier(.4, 0, .2, 1);
+  z-index: 1;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.fancy-btn::before,
+.fancy-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.fancy-btn::before {
+  left: -10px;
+  background: var(--primary);
+}
+
+.fancy-btn::after {
+  right: -10px;
+  background: var(--accent);
+}
+
+.fancy-btn:hover::before,
+.fancy-btn:hover::after {
+  width: 58%;
+}
+
+.fancy-btn span {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.08rem;
+  transition: color 0.3s;
+}
+
+.fancy-btn:hover span {
+  color: #e0aaff;
+  transition: color 0.3s;
+}
+
+.fancy-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px var(--accent);
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 600px) {
+  .fancy-btn {
+    font-size: 0.98rem;
+    padding: 10px 18px;
+    min-width: 120px;
+    max-width: 100%;
+  }
+}
+
+.btn,
+.btn-link,
+.send-btn {
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.18);
+  transition: box-shadow 0.3s, transform 0.3s;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn-link:hover,
+.send-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+  transform: translateY(-3px);
+}
+
+/* --- CARD RESPONSIVENESS & INTERACTIVITY --- */
+.project-card,
+.summary-card,
+.glass-card {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover,
+.summary-card:hover,
+.glass-card:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 12px 42px rgba(6, 182, 212, 0.25), 0 0 24px var(--accent);
+}
+
+@media (max-width: 1280px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 2vw;
+  }
+
+  .project-card {
+    min-width: 0;
+    height: auto;
+    min-height: 220px;
+  }
+
+  .summary-card,
+  .glass-card {
+    padding: 18px 8px;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px 2vw;
+  }
+
+  .project-card {
+    min-width: 0;
+    height: auto;
+    min-height: 180px;
+    border-radius: 12px;
+  }
+
+  .summary-card,
+  .glass-card {
+    padding: 12px 4px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+}
+
+/* --- BADGES --- */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.badge:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px var(--accent);
+}
+
+@media (max-width: 600px) {
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+/* --- FILTER BUTTONS --- */
+.filter-btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid #fafafa;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  transform: scale(1.07);
+}
+
+@media (max-width: 600px) {
+  .filter-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 22px;
+  }
+
+}
+
+/* --- MODAL BUTTONS --- */
+.modal-btn {
+  background: linear-gradient(89deg, var(--primary) 70%, var(--accent) 98%);
+  color: #fff;
+  padding: 0.7rem 1.35rem;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  font-size: .97rem;
+  text-decoration: none;
+  transition: background .18s, filter .15s, color .16s;
+  filter: brightness(.96);
+}
+
+.modal-btn:hover {
+  filter: brightness(1.08);
+  color: #fff;
+  background: linear-gradient(89deg, var(--accent) 70%, var(--primary) 98%);
+}
+
+
+@media (max-width: 600px) {
+  .modal-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .btn,
+  .btn-link,
+  .send-btn,
+  .fancy-btn,
+  button,
+  input[type="submit"] {
+    width: 35vw;
+    max-width: 260px;
+    min-width: 120px;
+    padding: 12px 0;
+    font-size: 1rem;
+    margin: 10px auto;
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* --- ACCESSIBILITY --- */
+.fancy-btn:focus,
+.filter-btn:focus,
+.modal-btn:focus {
+  outline: 2.5px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- ANIMATION FOR BUTTONS --- */
+@keyframes buttonPop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fancy-btn:active,
+.filter-btn:active,
+.modal-btn:active {
+  animation: buttonPop 0.18s;
+}
+
+/* === Tablet/Medium Screen Customization (768px - 900px) === */
+@media (min-width: 768px) and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 0 10px;
+  }
+
+  /* --- Navbar --- */
+  .navbar {
+    padding: 12px 18px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-links li a {
+    font-size: 0.95rem;
+    padding: 7px 14px;
+  }
+
+  .navbar-social a {
+    font-size: 1.5rem;
+  }
+
+  /* --- Hero Section --- */
+  .hero,
+  .creative-hero {
+    flex-direction: column;
+    padding: 40px 2vw;
+    gap: 24px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-left p {
+    font-size: 1.15rem;
+  }
+
+  .hero-image-container {
+    width: 180px;
+    height: 180px;
+    margin-top: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .btn,
+  .btn-link,
+  .send-btn,
+  .fancy-btn,
+  button,
+  input[type="submit"] {
+    width: fit-content;
+    min-width: 120px;
+    max-width: 220px;
+    font-size: 1rem;
+    padding: 12px 28px;
+    margin: 8px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* --- Projects Section --- */
+  .projects-main-content {
+    padding: 24px 2vw;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two cards per row */
+    gap: 22px;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .project-thumbnail {
+    height: 160px;
+  }
+
+  .project-info {
+    padding: 1rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-short-description {
+    font-size: 0.9rem;
+  }
+
+  .badges {
+    gap: 0.3rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* --- Cards (Summary, Glass) --- */
+  .home-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 1.5rem 2vw;
+  }
+
+  .summary-card,
+  .glass-card {
+    padding: 18px 10px;
+    font-size: 0.98rem;
+    border-radius: 12px;
+  }
+
+  /* --- Resume Section --- */
+  .resume-section {
+    padding: 18px 2vw;
+    max-width: 98vw;
+    border-radius: 12px;
+  }
+
+  .resume-section h2 {
+    font-size: 1.3rem;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .resume-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 2vw;
+  }
+
+  .resume-icon {
+    font-size: 1.5rem;
+    padding: 10px 8px;
+    margin-bottom: 8px;
+  }
+
+  .resume-content h3 {
+    font-size: 1rem;
+  }
+
+  .resume-content p {
+    font-size: 0.85rem;
+  }
+
+  .btn-link {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    width: fit-content;
+    margin: 8px auto;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  /* --- Skills Section --- */
+  .skills-section {
+    padding: 10px 2vw;
+    margin: 30px 0 40px 0;
+  }
+
+  .skills-block {
+    padding: 12px 2vw;
+    border-radius: 12px;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 7px 12px;
+    border-radius: 22px;
+  }
+
+  .skill-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 5px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+
+  .skill-icon {
+    margin-right: 0;
+    margin-bottom: 7px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .skill-details h3 {
+    font-size: .95rem;
+  }
+
+  .skill-name-badge {
+    font-size: .8em;
+    padding: 3px 7px;
+  }
+
+  /* --- Contact Section --- */
+  .contact-main-content {
+    padding: 10px 2vw 30px;
+  }
+
+  .main-heading {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .contact-container {
+    gap: 12px;
+    padding: 0 2vw;
+    flex-direction: column;
+  }
+
+  .get-in-touch-box,
+  .form-box {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .send-btn {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    display: block;
+  }
+
+  /* --- Footer --- */
+  .site-footer {
+    padding: 18px 2vw;
+    font-size: .85rem;
+  }
+
+  .footer-content {
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-links {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .footer-social a {
+    font-size: 1.1rem;
+  }
+
+  .fact-boxes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 95vw;
+    max-width: 95vw;
+    margin: 0 auto;
+    gap: 16px;
+    padding: 1.5rem 0;
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  .fact-box {
+    width: 100%;
+    margin-left: 0;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .contact-main-content {
+    height: 100%;
+  }
+
 }
