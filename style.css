@@ -2785,14 +2785,14 @@ a {
 .modal-content {
   background: linear-gradient(118deg, #23263b 80%, #191a23 100%);
   color: #f3f4f6;
-  width: 60%;
+  width: 60vw;
+  min-width: 320px;
+  max-width: 60vw;
   border-radius: 18px;
   padding: 2.4rem 2.1rem 2.3rem 2.1rem;
   box-shadow: 0 0 44px #06b6d431, 0 2px 19px #a855f731;
   position: relative;
   animation: scaleIn 0.26s cubic-bezier(.7, .1, .4, 1.1);
-  max-width: 90%;
-  /* General max width for modals */
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -3051,11 +3051,10 @@ a {
   }
 
   .modal-content {
-    padding: 1.1rem 4vw;
-    /* Adjusted padding */
-    border-radius: 12px;
+    width: 98vw;
     max-width: 98vw;
-    /* Almost full width */
+    padding: 1.1rem 4vw;
+    border-radius: 12px;
   }
 
   .modal-close {
@@ -3438,8 +3437,6 @@ a {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  max-width: 400px;
-  width: 90%;
   border: 1px solid rgba(110, 231, 183, 0.3);
 }
 
