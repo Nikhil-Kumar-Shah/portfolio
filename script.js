@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close the project modal if user clicks the background (outside modal-content)
   window.addEventListener("click", e => {
     const modal = document.getElementById("newProjectModal");
-    if (e.target === modal) modal.style.display = "none";
+    if (e.target === modal) closeNewModal();
   });
 
   // --- Hamburger Nav Toggle (for mobile) ---
@@ -189,14 +189,31 @@ function openNewModal(title, description, imageArray, github, live) {
 
   githubBtn.href = github;
   liveBtn.href = live;
-  modal.style.display = "flex";
+  // Show modal by toggling the active class (CSS handles centering)
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  const content = modal.querySelector('.new-modal-content');
+  if (content) { content.setAttribute('tabindex', '-1'); content.focus(); }
 }
 
 // Closes the "new project" modal
 function closeNewModal() {
   const modal = document.getElementById("newProjectModal");
-  if (modal) modal.style.display = "none";
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    const imagesEl = document.getElementById('newModalImages');
+    if (imagesEl) imagesEl.innerHTML = '';
+  }
 }
+
+// Close project modal on Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    const modal = document.getElementById('newProjectModal');
+    if (modal && modal.classList.contains('active')) closeNewModal();
+  }
+});
 
 // ========== General Modal Open/Close for Certifications, etc ==========
 // Opens modal by id and traps focus for accessibility
@@ -268,6 +285,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 
